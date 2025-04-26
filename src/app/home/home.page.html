@@ -1,20 +1,52 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="container m-2 p-5" >
+  <!-- {
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "address": {
+        "street": "Kulas Light",
+        "suite": "Apt. 556",
+        "city": "Gwenborough",
+        "zipcode": "92998-3874"
+    },
+    "phone": "1-770-736-8031 x56442",
+    "website": "hildegard.org",
+    "company": {
+        "name": "Romaguera-Crona",
+        "catchPhrase": "Multi-layered client-server neural-net",
+        "designation": "Laravel Developer",
+        "bs": "harness real-time e-markets"
+    }
+} -->
+    <div class="row">
+      <div class="col-12">
+          <table class="table table-resposive">
+            <thead>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+              <tr>
+                <th scope="col">Name </th>
+                <th scope="col">Company Name</th>
+                <th scope="col">Designation</th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr>
+                  <td> <input type="text" placeholder="search"  [(ngModel)]="searchtext" class="form-control" name="" id=""> </td>
+                  
+                  <td> <input type="text" placeholder="search"[(ngModel)]="searchCompany" class="form-control" name="" id=""> </td>
+                  
+                  <td> <input type="text" placeholder="search" [(ngModel)]="serachdesignamtion" class="form-control" name="" id=""> </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr *ngFor="let user of UserData | SearchPipe:searchtext "
+               [ngClass]="user.company.designation=='angular Developer'?'bg-green':''">
+                <td>{{user.name }} <span class="d-block smallfont">{{user.email}}</span> </td>
+                <td>{{user.company.name}}</td>
+                <td>{{user.company.designation}}</td>
+            </tbody>
+          </table>
+      </div>  
+    </div>
+</div>

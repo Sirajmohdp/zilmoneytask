@@ -1,27 +1,19 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.bg-green{
+  background-color: #4CAF50 !important;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.table>:not(caption)>*>* {
+  background-color: transparent;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.smallfont{
+  font-size: 0.8em;
 }
 
-#container a {
-  text-decoration: none;
+th{
+  background-color: black;
+}
+
+thead{
+  background-color: #888484;
 }
